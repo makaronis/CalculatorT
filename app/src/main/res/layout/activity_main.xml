@@ -33,6 +33,7 @@
 
         <EditText
             android:id="@+id/resultText"
+            android:inputType="none"
             style="@style/NumberElem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -47,7 +48,6 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="24dp"
             android:layout_marginBottom="8dp"
-            android:text="12+15+14-4"
             android:textColor="#6C6C6C"
             android:textSize="24sp"
             app:layout_constraintBottom_toTopOf="@+id/resultText"
