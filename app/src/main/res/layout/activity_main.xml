@@ -7,29 +7,287 @@
     android:background="@color/colorPrimary"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="150dp"
-        android:layout_height="58dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/gradient"
-
-        android:text="="
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:background="@drawable/gradient"
-        android:text="TextView"
+        android:layout_marginTop="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="360dp"
+            android:layout_height="2dp"
+
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/gradient2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.939" />
+
+        <EditText
+            android:id="@+id/resultText"
+            style="@style/NumberElem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            app:layout_constraintBottom_toTopOf="@+id/divider2"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/lastoperation"
+            style="@style/NumberElem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="8dp"
+            android:text="12+15+14-4"
+            android:textColor="#6C6C6C"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/resultText"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <Button
+            android:id="@+id/percentB"
+            style="@style/NumberElem"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="%"
+            android:textColor="@color/colorAccent"
+            app:layout_constraintBottom_toTopOf="@+id/nineB"
+            app:layout_constraintEnd_toStartOf="@+id/divideB" />
+
+        <Button
+            android:id="@+id/clearB"
+            style="@style/NumberElem"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="AC"
+            android:textColor="@color/colorAccent"
+            app:layout_constraintBottom_toTopOf="@+id/sevenB"
+            app:layout_constraintEnd_toStartOf="@+id/plusMinusB" />
+
+        <Button
+            android:id="@+id/plusMinusB"
+            style="@style/NumberElem"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="+/-"
+            android:textColor="@color/colorAccent"
+            app:layout_constraintBottom_toTopOf="@+id/eightB"
+            app:layout_constraintEnd_toStartOf="@+id/percentB" />
+
+        <Button
+            android:id="@+id/divideB"
+            style="@style/NumberElem"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="÷"
+            android:textColor="@color/colorAccent"
+            app:layout_constraintBottom_toTopOf="@+id/multiplyB"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <Button
+            android:id="@+id/zeroB"
+            style="@style/NumberElem"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="12dp"
+            android:text="0"
+            android:textSize="35sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/commaB" />
+
+        <Button
+            android:id="@+id/commaB"
+            style="@style/NumberElem"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginEnd="26dp"
+            android:layout_marginBottom="12dp"
+            android:text="."
+            android:textSize="35sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/sumB" />
+
+        <Button
+            android:id="@+id/twoB"
+            style="@style/NumberElem"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="2"
+            android:textSize="35sp"
+            app:layout_constraintBottom_toTopOf="@+id/sumB"
+            app:layout_constraintEnd_toStartOf="@+id/threeB" />
+
+        <Button
+            android:id="@+id/oneB"
+            style="@style/NumberElem"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="1"
+            android:textSize="35sp"
+            app:layout_constraintBottom_toTopOf="@+id/sumB"
+            app:layout_constraintEnd_toStartOf="@+id/twoB" />
+
+        <Button
+            android:id="@+id/threeB"
+            style="@style/NumberElem"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="3"
+            android:textSize="35sp"
+            app:layout_constraintBottom_toTopOf="@+id/sumB"
+            app:layout_constraintEnd_toStartOf="@+id/plusB" />
+
+        <Button
+            android:id="@+id/sumB"
+            style="@style/NumberElem"
+            android:layout_width="150dp"
+            android:layout_height="58dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="28dp"
+            android:background="@drawable/gradient"
+            android:fontFamily="@font/roboto_thin"
+            android:text="="
+            android:textColor="#F8F6F6"
+            android:textSize="40dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <Button
+            android:id="@+id/plusB"
+            style="@style/NumberElem"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="+"
+            android:textColor="@color/colorAccent"
+            app:layout_constraintBottom_toTopOf="@+id/sumB"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <Button
+            android:id="@+id/sevenB"
+            style="@style/NumberElem"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="7"
+            app:layout_constraintBottom_toTopOf="@+id/fourB"
+            app:layout_constraintEnd_toStartOf="@+id/eightB" />
+
+        <Button
+            android:id="@+id/eightB"
+            style="@style/NumberElem"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="8"
+            app:layout_constraintBottom_toTopOf="@+id/fiveB"
+            app:layout_constraintEnd_toStartOf="@+id/nineB" />
+
+        <Button
+            android:id="@+id/nineB"
+            style="@style/NumberElem"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="9"
+            app:layout_constraintBottom_toTopOf="@+id/sixB"
+            app:layout_constraintEnd_toStartOf="@+id/multiplyB" />
+
+        <Button
+            android:id="@+id/multiplyB"
+            style="@style/NumberElem"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="×"
+            android:textColor="@color/colorAccent"
+            app:layout_constraintBottom_toTopOf="@+id/minusB"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <Button
+            android:id="@+id/fourB"
+            style="@style/NumberElem"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="4"
+            app:layout_constraintBottom_toTopOf="@+id/plusB"
+            app:layout_constraintEnd_toStartOf="@+id/fiveB" />
+
+        <Button
+            android:id="@+id/fiveB"
+            style="@style/NumberElem"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="5"
+            app:layout_constraintBottom_toTopOf="@+id/plusB"
+            app:layout_constraintEnd_toStartOf="@+id/sixB" />
+
+        <Button
+            android:id="@+id/sixB"
+            style="@style/NumberElem"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="6"
+            app:layout_constraintBottom_toTopOf="@+id/plusB"
+            app:layout_constraintEnd_toStartOf="@+id/minusB" />
+
+        <Button
+            android:id="@+id/minusB"
+            style="@style/NumberElem"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="-"
+            android:textColor="@color/colorAccent"
+            app:layout_constraintBottom_toTopOf="@+id/plusB"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
